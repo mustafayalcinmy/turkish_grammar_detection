@@ -21,17 +21,17 @@
 #define STATE_LABIAL_FLAT 1
 #define STATE_LABIAL_ROUND 2
 
-#define STR_ALPHABET "abcçdefgðhiýjklmnoöprsþtuüvyz"
-#define STR_VOWEL "aeýioöuü"
-#define STR_VOWEL_BACK "aýou"
-#define STR_VOWEL_FRONT "eiöü"
+#define STR_ALPHABET "abcÃ§defgÃ°hiÃ½jklmnoÃ¶prsÃ¾tuÃ¼vyz"
+#define STR_VOWEL "aeÃ½ioÃ¶uÃ¼"
+#define STR_VOWEL_BACK "aÃ½ou"
+#define STR_VOWEL_FRONT "eiÃ¶Ã¼"
 #define STR_VOWEL_LARGER_FLAT "ae"
-#define STR_VOWEL_NARROW_FLAT "ýi"
-#define STR_VOWEL_LARGER_ROUND "oö"
-#define STR_VOWEL_NARROW_ROUND "uü"
-#define STR_CONSONANT "bcçdfgðhjklmnprsþtvyz"
-#define STR_CONSONANT_STRONG "çfhkpsþt"
-#define STR_CONSONANT_SOFT "bcdgðjlmnrvyz"
+#define STR_VOWEL_NARROW_FLAT "Ã½i"
+#define STR_VOWEL_LARGER_ROUND "oÃ¶"
+#define STR_VOWEL_NARROW_ROUND "uÃ¼"
+#define STR_CONSONANT "bcÃ§dfgÃ°hjklmnprsÃ¾tvyz"
+#define STR_CONSONANT_STRONG "Ã§fhkpsÃ¾t"
+#define STR_CONSONANT_SOFT "bcdgÃ°jlmnrvyz"
 #define STR_PLURAL_1 "ler"
 #define STR_PLURAL_2 "lar"
 #define STR_PUNCTUATION ".:?!"
@@ -86,15 +86,15 @@ int menu(unsigned char choice[], unsigned char text[],
 	printf("Is there a rule you want checked?\n");
 	printf("Please type one of the following rules:\n");
 	printf("*ulama\n");
-	printf("*büyük ünlü uyumu\n");
-	printf("*küçük ünlü uyumu\n");
-	printf("*sert ünsüzler\n");
-	printf("*yumuþak ünsüzler\n");
-	printf("*çoðul kelimeler\n");
-	printf("*kelime sayýsý\n");
-	printf("*cümle sayýsý\n");
-	printf("*harf sayýsý\n");
-	printf("*çýkýþ\n");
+	printf("*bÃ¼yÃ¼k Ã¼nlÃ¼ uyumu\n");
+	printf("*kÃ¼Ã§Ã¼k Ã¼nlÃ¼ uyumu\n");
+	printf("*sert Ã¼nsÃ¼zler\n");
+	printf("*yumuÃ¾ak Ã¼nsÃ¼zler\n");
+	printf("*Ã§oÃ°ul kelimeler\n");
+	printf("*kelime sayÃ½sÃ½\n");
+	printf("*cÃ¼mle sayÃ½sÃ½\n");
+	printf("*harf sayÃ½sÃ½\n");
+	printf("*Ã§Ã½kÃ½Ã¾\n");
 
 	fgets(choice, SIZE_CHOICE_LENGTH, stdin);
 	choice[strlen(choice) - 1] = '\0';
@@ -103,39 +103,39 @@ int menu(unsigned char choice[], unsigned char text[],
 	{
 		printf("%d number of ulama found\n", connexion(words));
 	}
-	else if (strcmp(choice,"büyük ünlü uyumu") == STRCMP_EQUAL)
+	else if (strcmp(choice,"bÃ¼yÃ¼k Ã¼nlÃ¼ uyumu") == STRCMP_EQUAL)
 	{
-		printf("%d number of büyük ünlü uyumu found\n", palatalHarmony(words));
+		printf("%d number of bÃ¼yÃ¼k Ã¼nlÃ¼ uyumu found\n", palatalHarmony(words));
 	}
-	else if (strcmp(choice,"küçük ünlü uyumu") == STRCMP_EQUAL)
+	else if (strcmp(choice,"kÃ¼Ã§Ã¼k Ã¼nlÃ¼ uyumu") == STRCMP_EQUAL)
 	{
-		printf("%d number of küçük ünlü uyumu found\n", labialHarmony(words));
+		printf("%d number of kÃ¼Ã§Ã¼k Ã¼nlÃ¼ uyumu found\n", labialHarmony(words));
 	}
-	else if (strcmp(choice,"sert ünsüzler") == STRCMP_EQUAL)
+	else if (strcmp(choice,"sert Ã¼nsÃ¼zler") == STRCMP_EQUAL)
 	{
-		printf("%d number of sert ünsüz found\n", strongConsonant(text));
+		printf("%d number of sert Ã¼nsÃ¼z found\n", strongConsonant(text));
 	}
-	else if (strcmp(choice,"yumuþak ünsüzler") == STRCMP_EQUAL)
+	else if (strcmp(choice,"yumuÃ¾ak Ã¼nsÃ¼zler") == STRCMP_EQUAL)
 	{
-		printf("%d number of yumuþak ünsüz found\n", softConsonant(text));
+		printf("%d number of yumuÃ¾ak Ã¼nsÃ¼z found\n", softConsonant(text));
 	}
-	else if (strcmp(choice,"çoðul kelimeler") == STRCMP_EQUAL)
+	else if (strcmp(choice,"Ã§oÃ°ul kelimeler") == STRCMP_EQUAL)
 	{
-		printf("%d number of çoðul kelime found\n", pluralWords(text));
+		printf("%d number of Ã§oÃ°ul kelime found\n", pluralWords(text));
 	}
-	else if (strcmp(choice,"kelime sayýsý") == STRCMP_EQUAL)
+	else if (strcmp(choice,"kelime sayÃ½sÃ½") == STRCMP_EQUAL)
 	{
 		printf("%d number of kelime found\n", numberOfWords(words));
 	}
-	else if (strcmp(choice,"cümle sayýsý") == STRCMP_EQUAL)
+	else if (strcmp(choice,"cÃ¼mle sayÃ½sÃ½") == STRCMP_EQUAL)
 	{
-		printf("%d number of cümle found\n", numberOfSentences(text));
+		printf("%d number of cÃ¼mle found\n", numberOfSentences(text));
 	}
-	else if (strcmp(choice,"harf sayýsý") == STRCMP_EQUAL)
+	else if (strcmp(choice,"harf sayÃ½sÃ½") == STRCMP_EQUAL)
 	{
 		printf("%d number of harf found\n", numberOfLetters(text));
 	}
-	else if (strcmp(choice,"çýkýþ") == STRCMP_EQUAL)
+	else if (strcmp(choice,"Ã§Ã½kÃ½Ã¾") == STRCMP_EQUAL)
 	{
 		printf("Exiting...\n");
 		return FAILURE;
